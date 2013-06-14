@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <script src="lib/jquery-min-1-8-0.js"></script>
+  <script src="lib/bench.js"></script>
+</head>
+<body>
+  <div class="hoge">
+    <div id="hoge">
+    </div>
+  </div>
+
+  <!--
+  <script>
+    _bench.start();
+    for (var i = 0; i < 100000; i++) {
+      new Object();
+    }
+    _bench.bench();
+  </script>
+  <script>
+    function A(){};
+    _bench.start();
+    for (var i = 0; i < 1000000; i++) {
+      A.a = 123;
+    }
+    _bench.bench();
+  </script>
+  <script>
+    function B(){};
+    _bench.start();
+    for (var i = 0; i < 1000000; i++) {
+      var b = 123;
+      B.b = b;
+    }
+    _bench.bench();
+  </script>
+  <script>
+    _bench.start();
+    var a = 123456789;
+    for (var i = 0; i < 10000000; i++) {
+      if (a === 123456789) {};
+    }
+    _bench.bench();
+  </script>
+  <script>
+    _bench.start();
+    var a = 123456789;
+    for (var i = 0; i < 10000000; i++) {
+      if (a == 123456789) {};
+    }
+    _bench.bench();
+  </script>
+  /-->
+  <script>
+    _bench.start();
+    for (var i = 0; i < 10000; i++) {
+      $(".hoge");
+    }
+    _bench.bench();
+  </script>
+  <script>
+    _bench.start();
+    for (var i = 0; i < 10000; i++) {
+      $("#hoge");
+    }
+    _bench.bench();
+  </script>
+
+</body>
+</html>

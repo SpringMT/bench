@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <script src="lib/jquery-min-1-8-0.js"></script>
+  <script src="lib/bench.js"></script>
+</head>
+<body>
+  <div class="hoge fuga">
+    <div id="hoge">
+    </div>
+  </div>
+
+  <script>
+    function hoge(a,b,c) {
+      if ( typeof c == 'function' ) {
+        console.log("function");
+      }
+      console.log(c);
+    }
+  </script>
+  <script>
+    var callback = {};
+    hoge(1,2, callback);
+  </script>
+
+
+</body>
+</html>

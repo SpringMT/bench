@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <script src="lib/jquery-min-1-8-0.js"></script>
+  <script src="lib/bench.js"></script>
+</head>
+<body>
+  <script>
+    _bench.start();
+    for (var i = 0; i < 1000; i++) {
+      a = {b: "hoge"};
+      console.log(a.b);
+    }
+    _bench.bench();
+  </script>
+  <script>
+    _bench.start();
+    for (var i = 0; i < 2; i++) {
+      settings = {};
+      settings.a = "a";
+      settings.b = "b";
+      ajax_args = $.extend({}, {b: "bb", a: "a"}, {b: "bbbb"});
+      var a = {aaa: 123}
+      var key = a.aaa
+      var b = {key: 222}
+      console.log(ajax_args.b);
+      console.log(ajax_args.a);
+      console.log(b);
+
+
+    }
+    _bench.bench();
+  </script>
+
+
+</body>
+</html>

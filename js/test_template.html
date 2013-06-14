@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <script src="lib/jquery-min-1-8-0.js"></script>
+  <script src="lib/jquery.tmpl.min.js"></script>
+  <script src="lib/underscore-min.js"></script>
+  <script src="lib/bench.js"></script>
+
+</head>
+<body>
+
+  <script>
+    var object = {url: "hoge"};
+    var template = '<p>${url}</p>';
+    _bench.start();
+    for (var i = 0; i < 1000; i++) {
+      var html = jQuery.tmpl(template, object);
+      //console.log(html);
+    }
+    _bench.bench();
+  </script>
+
+  <script>
+    var object = {url: "hoge"};
+    var template = '<p><%= url %></p>';
+    _bench.start();
+    for (var i = 0; i < 1000; i++) {
+      var html = _.template(template, object);
+      //console.log(html);
+    }
+    _bench.bench();
+
+  </script>
+
+</body>
+</html>

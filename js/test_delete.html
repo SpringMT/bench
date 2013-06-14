@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <script src="lib/jquery-min-1-8-0.js"></script>
+  <script src="lib/jquery.tmpl.min.js"></script>
+  <script src="lib/underscore-min.js"></script>
+  <script src="lib/backbone-min.js"></script>
+  <script src="lib/bench.js"></script>
+
+</head>
+<body>
+
+  <script>
+    var template = '<% _.each(list, function(i) { %><li id="close_<%= i %>"><%= i %></li><% }); %>';
+    $('body').append(_.template(template, {list: ['moe', 'curly', 'larry']}));
+  </script>
+
+<script>
+  var TestDlg = Backbone.View.extend({
+    el: 'body',
+    initialize: function() {
+      this.this_list = {
+        moe: 'moe',
+        curly: 'curly',
+        larry: 'larry'
+      };
+      var list = {
+        moe: 'moe',
+        curly: 'curly',
+        larry: 'larry'
+      }
+      console.log(this.this_list);
+    },
+    events: {
+      'click': 'deleteElement'
+    },
+    deleteElement: function(e) {
+      console.log(this.this_list);
+      delete this.this_list[$(e.target).text()];
+      $(e.target).remove();
+      console.log(this.this_list);
+    }
+  });
+  var test = new TestDlg();
+</script>
+
+</body>
+</html>

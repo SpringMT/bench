@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <script src="lib/jquery-min-1-8-0.js"></script>
+  <script src="lib/jquery.upload.js"></script>
+  <script src="lib/bench.js"></script>
+
+</head>
+<body>
+  <div class="hoge fuga">
+    <div id="hoge">
+    </div>
+    <form accept-charset="UTF-8" action="http://localhost:3001/" class="form-horizontal" id="login" method="post">
+      <input id="top_logic_mail" name="login[mail]" placeholder="example@.com" size="30" type="email" />
+      <input class="btn" data-disable-with="sending..." name="commit" type="submit" value="submit" />
+    </form>
+  </div>
+
+  <script>
+    var view = $("#action");
+    view.bind("change", function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      var filelist = e.target.files;
+      //var filelist = e.originalEvent.dataTransfer.files;
+      $.uploadFile("http://localhost:3001/?a=b", filelist[0], {});
+    });
+  </script>
+
+</body>
+</html>

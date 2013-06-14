@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <script src="lib/jquery-min-1-8-0.js"></script>
+  <script src="lib/bench.js"></script>
+</head>
+<body>
+  <div class="hoge fuga">
+    <div id="hoge">hoge</div>
+  </div>
+
+  <script>
+    _bench.start();
+    for (var i = 0; i < 100000; i++) {
+      a = document.getElementById("hoge");
+    }
+    _bench.bench();
+  </script>
+  <script>
+    _bench.start();
+    for (var i = 0; i < 100000; i++) {
+      a = $("#hoge");
+    }
+    _bench.bench();
+  </script>
+
+</body>
+</html>

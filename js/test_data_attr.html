@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <script src="lib/jquery-min-1-8-0.js"></script>
+  <script src="lib/bench.js"></script>
+</head>
+<body>
+  <div class="hoge fuga">
+    <div id="hoge" data-hoge="hoge">
+    </div>
+  </div>
+
+  <script>
+    function hoge() {
+      var test = $('#hoge').data('hoge');
+      console.log(test);
+
+      $('#hoge').data('hoge', 'fuga');
+      var test_1 = $('#hoge').data('hoge');
+      console.log(test_1);
+      $.data($('#hoge'), 'fuga');
+    }
+  </script>
+  <script>
+    hoge();
+  </script>
+
+
+</body>
+</html>

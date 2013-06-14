@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <script src="lib/jquery-min-1-8-0.js"></script>
+  <script src="lib/jquery.upload.js"></script>
+  <script src="lib/bench.js"></script>
+
+</head>
+<body>
+  <div class="hoge fuga">
+    <div id="hoge">
+    </div>
+  </div>
+
+  <script>
+    function a() {
+      throw {
+        name:    'TypeError',
+        message: 'test'
+      };
+      console.log("hoge");
+    }
+    try {
+      a();
+    }
+    catch(e) {
+      alert(e.name + ': ' + e.message);
+    }
+
+  </script>
+
+</body>
+</html>

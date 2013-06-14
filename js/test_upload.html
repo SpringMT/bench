@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <script src="lib/jquery-min-1-8-0.js"></script>
+  <script src="lib/jquery.upload.js"></script>
+  <script src="lib/bench.js"></script>
+
+</head>
+<body>
+  <div class="hoge fuga">
+    <div id="hoge">
+    </div>
+    <input type="file" id="action" multiple>
+  </div>
+
+  <script>
+    var view = $("#action");
+    view.bind("change", function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      var filelist = e.target.files;
+      //var filelist = e.originalEvent.dataTransfer.files;
+      $.uploadFile("http://localhost:3001/?a=b", filelist[0], {});
+    });
+  </script>
+
+</body>
+</html>

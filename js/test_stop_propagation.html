@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+</head>
+<body>
+<form action="">
+<p>name：<input type="text" name="name" size="40"></p>
+<input type="submit" value="send">
+</form>
+
+<script type="text/javascript">
+window.onclick = function() { alert('window was clicked'); }
+document.forms[0].onclick = function(ev) { alert('form was clicked'); ev.stopPropagation(); }
+</script>
+
+</body>
+</html>

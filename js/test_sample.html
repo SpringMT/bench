@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <script src="lib/jquery-min-1-8-0.js"></script>
+  <script src="lib/bench.js"></script>
+</head>
+<body>
+  <div class="hoge fuga">
+    <div id="hoge">
+    </div>
+  </div>
+
+  <script>
+    function foo() {
+      var a = {};
+      var b = [];
+      var c = {a: 123};
+      var d = 'hoge';
+      var e = '';
+      var f = undefined;
+      var g = new Object();
+      console.log($.isEmptyObject(a));
+      console.log($.isEmptyObject(b));
+      console.log($.isEmptyObject(c));
+      console.log($.isEmptyObject(d));
+      console.log($.isEmptyObject(e));
+      console.log($.isEmptyObject(f));
+      console.log($.isEmptyObject(g));
+      console.log($());
+
+    }
+  </script>
+  <script>
+    foo();
+  </script>
+
+
+</body>
+</html>

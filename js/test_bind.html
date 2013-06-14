@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+</head>
+<body>
+<form action="">
+<p>name：<input type="text" name="name" size="40"></p>
+<input type="submit" value="send">
+</form>
+
+<p>test bind</p>
+
+<script type="text/javascript">
+  $("p").bind("click", {hoge: "hoge"}, function(ev){
+    //alert( $(this).text() );
+    alert(ev.data.hoge);
+  });
+</script>
+
+</body>
+</html>
